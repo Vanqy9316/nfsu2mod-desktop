@@ -207,7 +207,7 @@
       state,
       startTimestamp,
       largeImageKey: "logo",
-      largeImageText: "Underground 2 Revived",
+      largeImageText: "Underground 2 Revived (modded)",
       smallImageKey: "logo",
       smallImageText,
       instance: false,

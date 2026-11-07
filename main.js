@@ -229,7 +229,7 @@ async function injectModScript(targetWindow) {
 
 // --- Discord Rich Presence (RPC) ---
 const RPC = require("discord-rpc");
-const DISCORD_CLIENT_ID = "1044809640241799178";
+const DISCORD_CLIENT_ID = "1568757859649323199";
 let rpc = null;
 let rpcConnected = false;
 let rpcInterval = null;
