@@ -2,18 +2,18 @@
   <img src="icon.png" alt="Underground 2 Revived" width="120" height="120">
 </p>
 
+<h3 align="center"><a href="https://github.com/DJTOMATO/nfsu2desktop">Original Repository: DJTOMATO/nfsu2desktop</a></h3>
+
 <h1 align="center">NFSU2 Desktop</h1>
 
 <p align="center">
   <b>Unofficial</b> standalone desktop client for <a href="https://nfsu2mod.xyz/">Underground 2 Revived</a> (Need for Speed: Underground 2).<br>
-  <b>English</b> · <a href="README.es.md">Español</a>
 </p>
 
 <p align="center">
   <a href="https://github.com/DJTOMATO/nfsu2desktop/releases"><b>Download Latest Installer (Releases)</b></a> ·
   <a href="https://nfsu2mod.xyz/">Website</a> ·
-  <a href="https://github.com/DJTOMATO/nfsu2desktop/issues">Report an Issue</a> ·
-  <a href="https://ko-fi.com/lenabot"><b>Donate on Ko-fi</b></a>
+  <a href="https://github.com/DJTOMATO/nfsu2desktop/issues">Report an Issue</a>
 </p>
 
 > [!IMPORTANT]
@@ -102,18 +102,6 @@ npm run build:linux
 # macOS (.dmg + .zip)
 npm run build:mac
 ```
-
-## Support & Donations
-
-If you find this client useful and want to support its ongoing development and maintenance, consider buying a coffee! Any support is greatly appreciated:
-
-<p align="center">
-  <a href="https://ko-fi.com/lenabot">
-    <img src="https://img.shields.io/badge/Ko--fi-Support%20on%20Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white" alt="Support on Ko-fi">
-  </a>
-</p>
-
-You can donate directly at [**ko-fi.com/lenabot**](https://ko-fi.com/lenabot). For more information, check out [SPONSORS.md](SPONSORS.md).
 
 ## Disclaimer
 

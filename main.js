@@ -49,9 +49,9 @@ if (process.platform === 'linux') {
   app.commandLine.appendSwitch('enable-features', 'WebAssemblyJSPI');
 }
 
-app.setName('Underground 2 Revived');
+app.setName('Underground 2 Revived (modded)');
 if (process.platform === 'win32') {
-  app.setAppUserModelId('com.glas.nfsu2desktop');
+  app.setAppUserModelId('com.vanqy.nfsu2desktop.modded');
 }
 
 let mainWindow = null;
@@ -509,7 +509,7 @@ function createWindow() {
     height: 860,
     minWidth: 800,
     minHeight: 600,
-    title: `Need for Speed: Underground 2 — Underground 2 Revived v${app.getVersion()}`,
+    title: `Need for Speed: Underground 2 — Underground 2 Revived (modded) v${app.getVersion()}`,
     backgroundColor: '#0d0d0d',
     autoHideMenuBar: true,
     fullscreenable: true,
