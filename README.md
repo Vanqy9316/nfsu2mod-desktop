@@ -52,7 +52,7 @@ Grab the latest installer `Underground 2 Revived Setup.exe` from the [**Releases
 
 | Component   | Minimum                                             | Recommended (60 - 120 FPS Widescreen)                               |
 | :---------- | :-------------------------------------------------- | :------------------------------------------------------------------ |
-| **OS**      | Windows 10 (64-bit, 1909+)                          | Linux (64-bit)                                                      |
+| **OS**      | Windows 10 (64-bit, 1909+)                          | Linux / Tiny11 (64-bit)                                             |
 | **CPU**     | 4-core x86_64 processor                             | Modern 6+ core CPU (Ryzen 5 / Core i5 or better)                    |
 | **GPU**     | DirectX 12 / Vulkan capable GPU with WebGPU support | Dedicated NVIDIA (GTX 1060 / RTX series) or AMD (RX 580 / RX 6000+) |
 | **RAM**     | 6 GB                                                | 8 GB+                                                               |
