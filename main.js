@@ -182,9 +182,10 @@ async function checkForUpdates(parentWindow) {
 
 // --- Dynamic Mod Engine (nfsu2mod.js) ---
 const REMOTE_MOD_URL =
-  "https://raw.githubusercontent.com/DJTOMATO/nfsu2desktop/main/nfsu2mod.js";
+  "https://raw.githubusercontent.com/Vanqy9316/nfsu2mod-desktop/main/nfsu2mod.js";
 let cachedModCode = null;
 let lastModRpcTimestamp = 0;
+let modScriptInjected = false;
 
 async function fetchRemoteModScript() {
   try {
@@ -216,11 +217,12 @@ async function fetchRemoteModScript() {
 }
 
 async function injectModScript(targetWindow) {
-  if (!targetWindow || targetWindow.isDestroyed()) return;
+  if (!targetWindow || targetWindow.isDestroyed() || modScriptInjected) return;
   try {
     const modCode = await fetchRemoteModScript();
     if (modCode && targetWindow && !targetWindow.isDestroyed()) {
       await targetWindow.webContents.executeJavaScript(modCode).catch(() => {});
+      modScriptInjected = true;
     }
   } catch (_) {}
 }
@@ -461,7 +463,7 @@ async function updateDiscordPresence() {
       { label: "Play in Browser", url: "https://nfsu2mod.xyz/" },
       {
         label: "Download Desktop App",
-        url: "https://github.com/DJTOMATO/nfsu2desktop/releases",
+        url: "https://github.com/Vanqy9316/nfsu2mod-desktop/releases",
       },
     ],
   };

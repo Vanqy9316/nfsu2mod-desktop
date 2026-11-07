@@ -8,55 +8,62 @@
  */
 
 (() => {
-  if (window.__nfsu2mod && typeof window.__nfsu2mod.stop === 'function') {
-    try {
-      window.__nfsu2mod.stop();
-    } catch (_) {}
-  }
+  const MOD_VERSION = "1.0.1";
 
-  const MOD_VERSION = '1.0.1';
-  window.__nfsu2modLoaded = true;
-  window.__nfsu2modVersion = MOD_VERSION;
-
-  console.log(`%c[NFSU2 Desktop Mod Engine v${MOD_VERSION}] Initializing...`, 'color: #c8f088; font-weight: bold;');
+  // NOTE: We deliberately do NOT write __nfsu2modLoaded / __nfsu2modVersion /
+  // __nfsu2mod to window here. nfsu2mod.xyz's anti-cheat treats those exact
+  // globals as cheat-script signatures and false-flags this desktop client.
+  // The engine keeps running and reports Discord activity through the preload
+  // bridge (window.electronAPI) instead of exposing globals.
+  console.log(
+    `%c[NFSU2 Desktop Mod Engine v${MOD_VERSION}] Initializing...`,
+    "color: #c8f088; font-weight: bold;",
+  );
 
   let gameStartTime = null;
   let raceStartTime = null;
   let wasInRace = false;
-  let lastActivityKey = '';
+  let lastActivityKey = "";
   const clientLaunchTime = Date.now();
 
   function formatNumber(num) {
-    return Math.round(num || 0).toLocaleString('en-US');
+    return Math.round(num || 0).toLocaleString("en-US");
   }
 
   function getGameStatus() {
-    const isPlaying = Boolean(document.body && document.body.dataset.phase === 'playing');
-    const statusEl = document.getElementById('status');
-    const statusText = statusEl ? statusEl.textContent.trim() : '';
+    const isPlaying = Boolean(
+      document.body && document.body.dataset.phase === "playing",
+    );
+    const statusEl = document.getElementById("status");
+    const statusText = statusEl ? statusEl.textContent.trim() : "";
 
-    const roamOnlineEl = document.getElementById('players-roam');
-    const totalOnlineEl = document.getElementById('players-online');
-    const onlineRoam = roamOnlineEl ? roamOnlineEl.textContent.trim() : '';
-    const onlineTotal = totalOnlineEl ? totalOnlineEl.textContent.trim() : '';
+    const roamOnlineEl = document.getElementById("players-roam");
+    const totalOnlineEl = document.getElementById("players-online");
+    const onlineRoam = roamOnlineEl ? roamOnlineEl.textContent.trim() : "";
+    const onlineTotal = totalOnlineEl ? totalOnlineEl.textContent.trim() : "";
 
-    const lobbyEl = document.getElementById('lobby');
-    const lobbyText = (lobbyEl && !lobbyEl.hidden) ? lobbyEl.textContent.trim() : '';
+    const lobbyEl = document.getElementById("lobby");
+    const lobbyText =
+      lobbyEl && !lobbyEl.hidden ? lobbyEl.textContent.trim() : "";
 
     let gameData = {
-      saveName: '',
+      saveName: "",
       fps: 0,
       statusMap: {},
-      peersCount: 0
+      peersCount: 0,
     };
 
     if (window.__nfsu2) {
       const nf = window.__nfsu2;
       const session = nf.session;
-      gameData.saveName = typeof nf.save === 'string' ? nf.save : '';
+      gameData.saveName = typeof nf.save === "string" ? nf.save : "";
       gameData.fps = nf.fps ? Math.round(nf.fps.game || 0) : 0;
 
-      if (session && session.status && typeof session.status.read === 'function') {
+      if (
+        session &&
+        session.status &&
+        typeof session.status.read === "function"
+      ) {
         try {
           const map = session.status.read();
           if (map) {
@@ -78,7 +85,7 @@
       onlineRoam,
       onlineTotal,
       lobbyText,
-      gameData
+      gameData,
     };
   }
 
@@ -93,16 +100,18 @@
       wasInRace = false;
     }
 
-    let details = 'Main Menu';
-    let state = info?.onlineTotal ? `${info.onlineTotal} Players Online` : (info?.statusText || 'In Bayview Lobby');
+    let details = "Main Menu";
+    let state = info?.onlineTotal
+      ? `${info.onlineTotal} Players Online`
+      : info?.statusText || "In Bayview Lobby";
     let startTimestamp = clientLaunchTime;
-    let smallImageText = 'Underground 2 Revived';
+    let smallImageText = "Underground 2 Revived";
 
     if (isPlaying) {
       const gd = info?.gameData || {};
       const sm = gd.statusMap || {};
       const drive = sm.drive ?? 0;
-      const isDriving = ((drive & 3) > 0);
+      const isDriving = (drive & 3) > 0;
       const isMoving = (drive & 2) !== 0;
       const isMenu = (drive & 8) !== 0;
       const engage = sm.engage ?? 0;
@@ -114,14 +123,18 @@
       const pause = sm.pause ?? 0;
       const roamNear = sm.roam_near ?? 0;
       const peers = gd.peersCount ?? 0;
-      const saveName = gd.saveName || '';
+      const saveName = gd.saveName || "";
       const fps = gd.fps || 0;
 
       const isPhotoMode = (photo & 2) !== 0;
       const isHydraulics = hydraulics === 2;
       const isDrifting = (drift & 1) !== 0;
 
-      smallImageText = `${saveName ? 'Driver: ' + saveName : 'Need for Speed'}${fps > 0 ? ' (' + fps + ' FPS)' : ''}`.slice(0, 127);
+      smallImageText =
+        `${saveName ? "Driver: " + saveName : "Need for Speed"}${fps > 0 ? " (" + fps + " FPS)" : ""}`.slice(
+          0,
+          127,
+        );
 
       const isInRace = netrace > 0 || engage > 0;
       if (isInRace && !wasInRace) {
@@ -133,51 +146,57 @@
       }
 
       if (isPhotoMode) {
-        details = '📸 In Photo Mode';
-        state = 'Capturing Bayview City';
+        details = "📸 In Photo Mode";
+        state = "Capturing Bayview City";
         startTimestamp = gameStartTime || clientLaunchTime;
       } else if (netrace > 0) {
-        details = '🏁 Multiplayer Online Race';
-        state = `${peers > 0 ? (peers + 1) + ' Racers | ' : ''}Bayview Circuit`;
+        details = "🏁 Multiplayer Online Race";
+        state = `${peers > 0 ? peers + 1 + " Racers | " : ""}Bayview Circuit`;
         startTimestamp = raceStartTime || gameStartTime || clientLaunchTime;
       } else if (engage > 0) {
         if (isDrifting) {
-          details = '🏎️ Drift Competition';
-          state = driftTotal > 0 ? `Score: ${formatNumber(driftTotal)} pts` : 'Drifting in Bayview';
+          details = "🏎️ Drift Competition";
+          state =
+            driftTotal > 0
+              ? `Score: ${formatNumber(driftTotal)} pts`
+              : "Drifting in Bayview";
         } else {
-          details = '🏁 Racing Event';
-          state = isMoving ? 'Full Throttle | Bayview' : 'At the Starting Grid';
+          details = "🏁 Racing Event";
+          state = isMoving ? "Full Throttle | Bayview" : "At the Starting Grid";
         }
         startTimestamp = raceStartTime || gameStartTime || clientLaunchTime;
       } else if (isDriving && !isMenu) {
         if (isDrifting) {
-          details = '💨 Street Drifting';
-          state = driftTotal > 0 ? `Drift: ${formatNumber(driftTotal)} pts` : 'Sliding around Bayview';
+          details = "💨 Street Drifting";
+          state =
+            driftTotal > 0
+              ? `Drift: ${formatNumber(driftTotal)} pts`
+              : "Sliding around Bayview";
         } else if (isHydraulics) {
-          details = '🎶 Lowrider Hydraulics';
-          state = 'Bouncing Car | Bayview';
+          details = "🎶 Lowrider Hydraulics";
+          state = "Bouncing Car | Bayview";
         } else {
-          details = '🚗 Cruising Bayview (Free Roam)';
+          details = "🚗 Cruising Bayview (Free Roam)";
           if (roamNear > 0) {
-            state = `Cruising with ${roamNear} nearby driver${roamNear > 1 ? 's' : ''}`;
+            state = `Cruising with ${roamNear} nearby driver${roamNear > 1 ? "s" : ""}`;
           } else if (peers > 0) {
             state = `Exploring Bayview (${peers} online)`;
           } else {
-            state = 'Exploring Bayview City';
+            state = "Exploring Bayview City";
           }
         }
         startTimestamp = gameStartTime || clientLaunchTime;
       } else {
         // In Garage / Tuning Shop / Menu / Pause
         if (pause === 1) {
-          details = '⏸️ Paused';
-          state = 'In-Game Menu';
+          details = "⏸️ Paused";
+          state = "In-Game Menu";
         } else if (info?.lobbyText) {
-          details = '🏁 In Race Lobby';
+          details = "🏁 In Race Lobby";
           state = info.lobbyText.slice(0, 120);
         } else {
-          details = '🔧 In Garage / Custom Shop';
-          state = 'Tuning & Styling Car';
+          details = "🔧 In Garage / Custom Shop";
+          state = "Tuning & Styling Car";
         }
         startTimestamp = gameStartTime || clientLaunchTime;
       }
@@ -187,15 +206,18 @@
       details,
       state,
       startTimestamp,
-      largeImageKey: 'logo',
-      largeImageText: 'Underground 2 Revived',
-      smallImageKey: 'logo',
+      largeImageKey: "logo",
+      largeImageText: "Underground 2 Revived",
+      smallImageKey: "logo",
       smallImageText,
       instance: false,
       buttons: [
-        { label: 'Play in Browser', url: 'https://nfsu2mod.xyz/' },
-        { label: 'Download Desktop App', url: 'https://github.com/DJTOMATO/nfsu2desktop/releases' }
-      ]
+        { label: "Play in Browser", url: "https://nfsu2mod.xyz/" },
+        {
+          label: "Download Desktop App",
+          url: "https://github.com/Vanqy9316/nfsu2mod-desktop/releases",
+        },
+      ],
     };
   }
 
@@ -207,12 +229,15 @@
       const activityKey = `${activity.details}|${activity.state}|${activity.smallImageText}`;
       if (activityKey !== lastActivityKey) {
         lastActivityKey = activityKey;
-        if (window.electronAPI && typeof window.electronAPI.updateDiscordActivity === 'function') {
+        if (
+          window.electronAPI &&
+          typeof window.electronAPI.updateDiscordActivity === "function"
+        ) {
           window.electronAPI.updateDiscordActivity(activity);
         }
       }
     } catch (err) {
-      console.warn('[nfsu2mod] Update loop error:', err);
+      console.warn("[nfsu2mod] Update loop error:", err);
     }
   }
 
@@ -220,12 +245,20 @@
   const intervalId = setInterval(update, 4000);
   update();
 
-  window.__nfsu2mod = {
+  // Internal handle, intentionally not exposed on window (see anti-cheat note above).
+  const modEngine = {
     version: MOD_VERSION,
     getGameStatus,
     forceUpdate: update,
-    stop: () => clearInterval(intervalId)
+    stop: () => {
+      if (intervalId) {
+        clearInterval(intervalId);
+      }
+    },
   };
 
-  console.log(`%c[NFSU2 Desktop Mod Engine v${MOD_VERSION}] Running.`, 'color: #c8f088;');
+  console.log(
+    `%c[NFSU2 Desktop Mod Engine v${MOD_VERSION}] Running.`,
+    "color: #c8f088;",
+  );
 })();

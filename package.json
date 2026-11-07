@@ -75,7 +75,7 @@
       ],
       "icon": "icon.png",
       "category": "Game",
-      "maintainer": "Glas <48269777+DJTOMATO@users.noreply.github.com>",
+      "maintainer": "Vanqy <105237785+Vanqy9316@users.noreply.github.com>",
       "artifactName": "${productName}-${version}-linux-${arch}.${ext}"
     },
     "files": [

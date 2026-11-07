@@ -76,7 +76,7 @@ Grab the latest installer `Underground 2 Revived Setup.exe` from the [**Releases
 You need [Node.js](https://nodejs.org/) (v20+ recommended) and npm installed.
 
 ```bash
-git clone https://github.com/DJTOMATO/nfsu2desktop.git
+git clone https://github.com/Vanqy9316/nfsu2mod-desktop.git
 cd nfsu2desktop
 npm install
 ```
