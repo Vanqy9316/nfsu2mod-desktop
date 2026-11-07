@@ -5,32 +5,32 @@
 <h1 align="center">NFSU2 Desktop</h1>
 
 <p align="center">
-  <b>Unofficial</b> standalone desktop client for <a href="https://nfsu2.xyz/">Underground 2 Revived</a> (Need for Speed: Underground 2).<br>
+  <b>Unofficial</b> standalone desktop client for <a href="https://nfsu2mod.xyz/">Underground 2 Revived</a> (Need for Speed: Underground 2).<br>
   <b>English</b> · <a href="README.es.md">Español</a>
 </p>
 
 <p align="center">
   <a href="https://github.com/DJTOMATO/nfsu2desktop/releases"><b>Download Latest Installer (Releases)</b></a> ·
-  <a href="https://nfsu2.xyz/">Website</a> ·
+  <a href="https://nfsu2mod.xyz/">Website</a> ·
   <a href="https://github.com/DJTOMATO/nfsu2desktop/issues">Report an Issue</a> ·
   <a href="https://ko-fi.com/lenabot"><b>Donate on Ko-fi</b></a>
 </p>
 
 > [!IMPORTANT]
-> **Unofficial Client:** This project is an independent community project and is **not affiliated with, endorsed, maintained, or supported by** the creators or operators of [nfsu2.xyz](https://nfsu2.xyz/) or Electronic Arts.
+> **Unofficial Client:** This project is an independent community project and is **not affiliated with, endorsed, maintained, or supported by** the creators or operators of [nfsu2mod.xyz](https://nfsu2mod.xyz/) or Electronic Arts.
 
 ---
 
 ## Why a desktop client?
 
-[Underground 2 Revived](https://nfsu2.xyz/) is a web port of the classic 2004 racing game *Need for Speed: Underground 2*, running directly in modern browsers via static recompilation (`NFSU2Recomp`), WebAssembly, and WebGPU. While it runs inside standard web browsers, standard browser tabs introduce several pain points during gameplay and online multiplayer:
+[Underground 2 Revived](https://nfsu2mod.xyz/) is a web port of the classic 2004 racing game *Need for Speed: Underground 2*, running directly in modern browsers via static recompilation (`NFSU2Recomp`), WebAssembly, and WebGPU. While it runs inside standard web browsers, standard browser tabs introduce several pain points during gameplay and online multiplayer:
 
 - **Alt-tabbing throttles background tabs:** Regular browsers throttle timers and renderers when minimized or occluded. Tabbing out to check Discord, change music, or look at a map can desync or drop your online Free Roam and race sessions.
 - **Integrated vs. discrete GPU:** Laptops frequently default web browsers to low-power integrated graphics rather than your dedicated NVIDIA or AMD GPU.
 - **Screen sleep on controller or wheel:** Driving with a gamepad or racing wheel without touching keyboard or mouse can trigger Windows screen timeout mid-race.
 - **F12 screenshot conflicts:** Browsers typically intercept `F12` for developer tools, conflicting with the game's native `F12` screenshot feature.
 
-This desktop client wraps `nfsu2.xyz` in a clean, high-performance Electron environment with dedicated GPU flags, zero background throttling, and controller wake-lock enabled out of the box.
+This desktop client wraps `nfsu2mod.xyz` in a clean, high-performance Electron environment with dedicated GPU flags, zero background throttling, and controller wake-lock enabled out of the box.
 
 ## Download & Install
 
@@ -117,5 +117,5 @@ You can donate directly at [**ko-fi.com/lenabot**](https://ko-fi.com/lenabot). F
 
 ## Disclaimer
 
-This is an **unofficial community desktop wrapper** for [nfsu2.xyz](https://nfsu2.xyz/). It is an independent project and is **not affiliated with, maintained, authorized, or endorsed by** the creators or operators of [nfsu2.xyz](https://nfsu2.xyz/) nor Electronic Arts. *Need for Speed* and *Need for Speed: Underground 2* are trademarks of Electronic Arts Inc. No game files, ROMs, or copyrighted assets are hosted or distributed in this repository.
+This is an **unofficial community desktop wrapper** for [nfsu2mod.xyz](https://nfsu2mod.xyz/). It is an independent project and is **not affiliated with, maintained, authorized, or endorsed by** the creators or operators of [nfsu2mod.xyz](https://nfsu2mod.xyz/) nor Electronic Arts. *Need for Speed* and *Need for Speed: Underground 2* are trademarks of Electronic Arts Inc. No game files, ROMs, or copyrighted assets are hosted or distributed in this repository.
 

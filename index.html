@@ -9,18 +9,17 @@
   <style>
     :root {
       color-scheme: dark;
-      --bg: #0d0d0d;
+      --bg: #0b0b0d;
       --surface: #171717;
-      --line: #292929;
-      --line-2: #3d3d3d;
-      --text: #f0f0f0;
-      --muted: #a3a3a3;
-      --faint: #666666;
-      --accent: #c8f088;
-      --accent-dim: #98c456;
-      --cyan: #38bdf8;
-      --danger: #ef4444;
-      --sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      --line: #3a3a3a;
+      --line-2: #8a8a8a;
+      --text: #ffffff;
+      --muted: #c4c4c4;
+      --accent: #ffa94d;
+      --accent-dim: #443626;
+      --accent-glow: rgba(255, 169, 77, 0.45);
+      --danger: #ff8a80;
+      --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
 
     * {
@@ -31,7 +30,7 @@
     body {
       margin: 0;
       height: 100%;
-      background: radial-gradient(ellipse at 50% -15%, #1f2b18 0%, #121710 40%, var(--bg) 100%) fixed var(--bg);
+      background: radial-gradient(900px 600px at 85% 900px, rgba(255, 169, 77, 0.05), transparent 70%) no-repeat fixed var(--bg);
       color: var(--text);
       font: 15px/1.55 var(--sans);
       overflow: hidden;
@@ -62,7 +61,7 @@
 
     h1 {
       margin: 0;
-      font: 800 clamp(28px, 5vw, 48px)/1.08 var(--sans);
+      font: italic 900 clamp(28px, 5vw, 48px)/1.08 var(--sans);
       letter-spacing: 0.04em;
       color: #ffffff;
       text-transform: uppercase;
@@ -75,7 +74,7 @@
       font-weight: 700;
       letter-spacing: 0.2em;
       color: var(--accent);
-      text-shadow: 0 0 16px rgba(200, 240, 136, 0.4);
+      text-shadow: 0 0 28px var(--accent-glow), 0 4px 24px rgba(0, 0, 0, 0.6);
     }
 
     .status {
@@ -111,7 +110,7 @@
     button {
       margin-top: 8px;
       padding: 11px 26px;
-      font: 700 13px var(--sans);
+      font: italic 700 13px var(--sans);
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: #0d0d0d;
@@ -123,7 +122,7 @@
     }
 
     button:hover {
-      background: #dbf8a3;
+      background: #ffc788;
       transform: translateY(-1px);
     }
 
@@ -143,7 +142,7 @@
   <button type="button" id="retry" hidden>Retry Connection</button>
 
   <script>
-    const TARGET_URL = 'https://nfsu2.xyz/';
+    const TARGET_URL = 'https://nfsu2mod.xyz/';
     const params = new URLSearchParams(window.location.search);
     const isError = params.get('error') === '1';
     const dot = document.getElementById('dot');
@@ -165,7 +164,7 @@
 
     if (isError) {
       dot.className = 'dot err';
-      msg.textContent = 'Could not reach nfsu2.xyz. Check your internet connection.';
+      msg.textContent = 'Could not reach nfsu2mod.xyz. Check your internet connection.';
       retryBtn.hidden = false;
     } else {
       connect();

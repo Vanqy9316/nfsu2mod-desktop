@@ -5,32 +5,32 @@
 <h1 align="center">NFSU2 Desktop</h1>
 
 <p align="center">
-  Cliente de escritorio <b>no oficial</b> para <a href="https://nfsu2.xyz/">Underground 2 Revived</a> (Need for Speed: Underground 2).<br>
+  Cliente de escritorio <b>no oficial</b> para <a href="https://nfsu2mod.xyz/">Underground 2 Revived</a> (Need for Speed: Underground 2).<br>
   <a href="README.md">English</a> · <b>Español</b>
 </p>
 
 <p align="center">
   <a href="https://github.com/DJTOMATO/nfsu2desktop/releases"><b>Descargar Instalador (Releases)</b></a> ·
-  <a href="https://nfsu2.xyz/">Sitio Web</a> ·
+  <a href="https://nfsu2mod.xyz/">Sitio Web</a> ·
   <a href="https://github.com/DJTOMATO/nfsu2desktop/issues">Reportar un Problema</a> ·
   <a href="https://ko-fi.com/lenabot"><b>Donar en Ko-fi</b></a>
 </p>
 
 > [!IMPORTANT]
-> **Cliente no oficial:** Este proyecto es una iniciativa comunitaria independiente y **no está afiliado, respaldado, mantenido ni asociado** con los creadores u operadores de [nfsu2.xyz](https://nfsu2.xyz/) ni con Electronic Arts.
+> **Cliente no oficial:** Este proyecto es una iniciativa comunitaria independiente y **no está afiliado, respaldado, mantenido ni asociado** con los creadores u operadores de [nfsu2mod.xyz](https://nfsu2mod.xyz/) ni con Electronic Arts.
 
 ---
 
 ## ¿Por qué usar un cliente de escritorio?
 
-[Underground 2 Revived](https://nfsu2.xyz/) es una adaptación web del legendario juego de carreras de 2004 *Need for Speed: Underground 2*, ejecutándose directamente en navegadores modernos mediante recompilación estática (`NFSU2Recomp`), WebAssembly y WebGPU. Aunque funciona en navegadores web tradicionales, jugar desde una pestaña común genera varias limitaciones molestas durante las partidas y el modo online:
+[Underground 2 Revived](https://nfsu2mod.xyz/) es una adaptación web del legendario juego de carreras de 2004 *Need for Speed: Underground 2*, ejecutándose directamente en navegadores modernos mediante recompilación estática (`NFSU2Recomp`), WebAssembly y WebGPU. Aunque funciona en navegadores web tradicionales, jugar desde una pestaña común genera varias limitaciones molestas durante las partidas y el modo online:
 
 - **Throttling en segundo plano al hacer Alt+Tab:** Los navegadores limitan drásticamente el uso de CPU y timers en pestañas inactivas o minimizadas. Si salís un momento a Discord, a cambiar de música o consultar un mapa, podés desincronizarte o caerte de la sesión online (Free Roam o carreras).
 - **GPU integrada en lugar de dedicada:** En muchas notebooks el navegador predetermina los gráficos integrados de bajo consumo en lugar de tu placa dedicada NVIDIA o AMD.
 - **Suspensión de pantalla al jugar con mando o volante:** Al conducir con un joystick o volante sin tocar teclado ni mouse, Windows puede suspender la pantalla en plena carrera.
 - **Conflictos con la captura de pantalla (F12):** Los navegadores abren las herramientas de desarrollador al presionar `F12`, interfiriendo con la función de captura nativa del juego.
 
-Este cliente de escritorio empaqueta `nfsu2.xyz` en un entorno Electron limpio y de alto rendimiento con aceleración forzada en placa dedicada, sin throttling en segundo plano y con prevención de suspensión automática.
+Este cliente de escritorio empaqueta `nfsu2mod.xyz` en un entorno Electron limpio y de alto rendimiento con aceleración forzada en placa dedicada, sin throttling en segundo plano y con prevención de suspensión automática.
 
 ## Descarga e instalación
 
@@ -117,5 +117,5 @@ Podés donar directamente en [**ko-fi.com/lenabot**](https://ko-fi.com/lenabot).
 
 ## Aviso legal
 
-Este proyecto es un **cliente de escritorio no oficial** desarrollado por la comunidad para [nfsu2.xyz](https://nfsu2.xyz/). Es un proyecto independiente y **no está afiliado, mantenido, autorizado ni respaldado** por los creadores u operadores de [nfsu2.xyz](https://nfsu2.xyz/) ni por Electronic Arts. *Need for Speed* y *Need for Speed: Underground 2* son marcas registradas de Electronic Arts Inc. Este repositorio no aloja ni distribuye archivos protegidos por derechos de autor o copias del juego original.
+Este proyecto es un **cliente de escritorio no oficial** desarrollado por la comunidad para [nfsu2mod.xyz](https://nfsu2mod.xyz/). Es un proyecto independiente y **no está afiliado, mantenido, autorizado ni respaldado** por los creadores u operadores de [nfsu2mod.xyz](https://nfsu2mod.xyz/) ni por Electronic Arts. *Need for Speed* y *Need for Speed: Underground 2* son marcas registradas de Electronic Arts Inc. Este repositorio no aloja ni distribuye archivos protegidos por derechos de autor o copias del juego original.
 

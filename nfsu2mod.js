@@ -193,7 +193,7 @@
       smallImageText,
       instance: false,
       buttons: [
-        { label: 'Play in Browser', url: 'https://nfsu2.xyz/' },
+        { label: 'Play in Browser', url: 'https://nfsu2mod.xyz/' },
         { label: 'Download Desktop App', url: 'https://github.com/DJTOMATO/nfsu2desktop/releases' }
       ]
     };

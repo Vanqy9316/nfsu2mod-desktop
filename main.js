@@ -1,8 +1,8 @@
 const { app, BrowserWindow, dialog, ipcMain, nativeImage, powerSaveBlocker, session, shell } = require('electron');
 const path = require('path');
 
-const TARGET_URL = 'https://nfsu2.xyz/';
-const ALLOWED_HOST = 'nfsu2.xyz';
+const TARGET_URL = 'https://nfsu2mod.xyz/';
+const ALLOWED_HOST = 'nfsu2mod.xyz';
 
 // Maximize GPU, WebGPU, WebAssembly, Audio, and Network hardware capabilities
 app.commandLine.appendSwitch('ignore-gpu-blocklist');
@@ -14,7 +14,7 @@ app.commandLine.appendSwitch('enable-oop-rasterization');
 app.commandLine.appendSwitch('enable-accelerated-2d-canvas');
 app.commandLine.appendSwitch('enable-quic');
 app.commandLine.appendSwitch('autoplay-policy', 'no-user-gesture-required');
-app.commandLine.appendSwitch('disk-cache-size', String(3 * 1024 * 1024 * 1024)); // 3 GB cache for ~1.8 GB preload game assets and streamed data
+app.commandLine.appendSwitch('disk-cache-size', String(6 * 1024 * 1024 * 1024)); // 3 GB cache for ~1.8 GB preload game assets and streamed data
 
 // Prevent background throttling so online multiplayer (Free Roam & Races) never desyncs or disconnects
 app.commandLine.appendSwitch('disable-renderer-backgrounding');
@@ -418,7 +418,7 @@ async function updateDiscordPresence() {
     smallImageText,
     instance: false,
     buttons: [
-      { label: 'Play in Browser', url: 'https://nfsu2.xyz/' },
+      { label: 'Play in Browser', url: 'https://nfsu2mod.xyz/' },
       { label: 'Download Desktop App', url: 'https://github.com/DJTOMATO/nfsu2desktop/releases' }
     ]
   };
@@ -446,7 +446,7 @@ function getAppIcon() {
 function createWindow() {
   const userAgent = getCleanUserAgent();
 
-  // Grant hardware, storage & media permissions for nfsu2.xyz (Gamepad, WebGPU, Fullscreen, Audio, PointerLock, HID Wheels, File System for F9 Custom Radio)
+  // Grant hardware, storage & media permissions for nfsu2mod.xyz (Gamepad, WebGPU, Fullscreen, Audio, PointerLock, HID Wheels, File System for F9 Custom Radio)
   const allowedPermissions = new Set([
     'fullscreen',
     'pointerLock',
@@ -565,7 +565,7 @@ function createWindow() {
     return { action: 'deny' };
   });
 
-  // Prevent in-window navigation away from nfsu2.xyz to external sites
+  // Prevent in-window navigation away from nfsu2mod.xyz to external sites
   mainWindow.webContents.on('will-navigate', (event, url) => {
     try {
       const parsed = new URL(url);
@@ -617,7 +617,7 @@ function createWindow() {
     }
   });
 
-  // Inject dynamic mod engine (nfsu2mod.js) when nfsu2.xyz loads
+  // Inject dynamic mod engine (nfsu2mod.js) when nfsu2mod.xyz loads
   mainWindow.webContents.on('dom-ready', () => {
     const currentUrl = mainWindow?.webContents?.getURL() || '';
     if (currentUrl.includes(ALLOWED_HOST)) {

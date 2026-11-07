@@ -8,7 +8,7 @@ Thank you for considering supporting **NFSU2 Desktop**! / ¡Gracias por consider
 
 ### Why Support This Project?
 
-NFSU2 Desktop is a free, open-source desktop client designed to provide the best possible experience when playing *Need for Speed: Underground 2* online via [Underground 2 Revived](https://nfsu2.xyz/).
+NFSU2 Desktop is a free, open-source desktop client designed to provide the best possible experience when playing *Need for Speed: Underground 2* online via [Underground 2 Revived](https://nfsu2mod.xyz/).
 
 Developing, testing, optimizing WebAssembly / WebGPU / Chromium flags, and maintaining the desktop app takes ongoing time and care. Donations help support:
 
@@ -41,7 +41,7 @@ If you cannot contribute financially, you can still support the project by:
 
 ### ¿Por qué apoyar este proyecto?
 
-NFSU2 Desktop es un cliente de escritorio gratuito y de código abierto creado para brindar la mejor experiencia posible al jugar *Need for Speed: Underground 2* online a través de [Underground 2 Revived](https://nfsu2.xyz/).
+NFSU2 Desktop es un cliente de escritorio gratuito y de código abierto creado para brindar la mejor experiencia posible al jugar *Need for Speed: Underground 2* online a través de [Underground 2 Revived](https://nfsu2mod.xyz/).
 
 Desarrollar, testear, optimizar los flags de WebAssembly / WebGPU / Chromium y mantener la aplicación requiere tiempo y dedicación continua. Las donaciones ayudan a:
 
