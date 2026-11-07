@@ -1,16 +1,16 @@
 {
-  "name": "nfsu2desktop",
-  "productName": "Underground 2 Revived",
+  "name": "nfsu2moddsktp",
+  "productName": "Underground 2 Revived (modded)",
   "version": "1.1.5",
-  "description": "Desktop client for Need for Speed: Underground 2 (nfsu2mod.xyz)",
+  "description": "Desktop client for modded Need for Speed: Underground 2 (nfsu2mod.xyz)",
   "main": "main.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/DJTOMATO/nfsu2desktop.git"
+    "url": "https://github.com/Vanqy9316/nfsu2mod-desktop.git"
   },
-  "homepage": "https://github.com/DJTOMATO/nfsu2desktop#readme",
+  "homepage": "https://github.com/Vanqy9316/nfsu2mod-desktop#readme",
   "bugs": {
-    "url": "https://github.com/DJTOMATO/nfsu2desktop/issues"
+    "url": "https://github.com/Vanqy9316/nfsu2mod-desktop/issues"
   },
   "scripts": {
     "start": "electron .",
@@ -28,14 +28,14 @@
     "webassembly",
     "webgpu"
   ],
-  "author": "Glas",
+  "author": "Vanqy",
   "license": "GPL-3.0",
   "devDependencies": {
     "electron": "^45.0.0",
     "electron-builder": "^26.15.3"
   },
   "build": {
-    "appId": "com.glas.nfsu2desktop",
+    "appId": "com.vanqy.nfsu2desktop.modded",
     "productName": "Underground 2 Revived-modded",
     "npmRebuild": false,
     "win": {
