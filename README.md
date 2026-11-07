@@ -4,16 +4,16 @@
 
 <h3 align="center"><a href="https://github.com/DJTOMATO/nfsu2desktop">Original Repository: DJTOMATO/nfsu2desktop</a></h3>
 
-<h1 align="center">NFSU2 Desktop</h1>
+<h1 align="center">NFSU2 modded Desktop</h1>
 
 <p align="center">
-  <b>Unofficial</b> standalone desktop client for <a href="https://nfsu2mod.xyz/">Underground 2 Revived</a> (Need for Speed: Underground 2).<br>
+  <b>Unofficial</b> standalone desktop client for <a href="https://nfsu2mod.xyz/">Underground 2 Revived (modded)</a> (Need for Speed: Underground 2 with ported mods).<br>
 </p>
 
 <p align="center">
-  <a href="https://github.com/DJTOMATO/nfsu2desktop/releases"><b>Download Latest Installer (Releases)</b></a> ·
+  <a href="https://github.com/Vanqy9316/nfsu2mod-desktop/releases"><b>Download Latest Installer (Releases)</b></a> ·
   <a href="https://nfsu2mod.xyz/">Website</a> ·
-  <a href="https://github.com/DJTOMATO/nfsu2desktop/issues">Report an Issue</a>
+  <a href="https://github.com/Vanqy9316/nfsu2mod-desktop/issues">Report an Issue</a>
 </p>
 
 > [!IMPORTANT]
@@ -23,7 +23,7 @@
 
 ## Why a desktop client?
 
-[Underground 2 Revived](https://nfsu2mod.xyz/) is a web port of the classic 2004 racing game *Need for Speed: Underground 2*, running directly in modern browsers via static recompilation (`NFSU2Recomp`), WebAssembly, and WebGPU. While it runs inside standard web browsers, standard browser tabs introduce several pain points during gameplay and online multiplayer:
+[Underground 2 Revived (modded)](https://nfsu2mod.xyz/) is a web port of the classic 2004 racing game _Need for Speed: Underground 2 with a huge list of mods on top_, running directly in modern browsers via static recompilation (`NFSU2Recomp`), WebAssembly, and WebGPU. While it runs inside standard web browsers, standard browser tabs introduce several pain points during gameplay and online multiplayer:
 
 - **Alt-tabbing throttles background tabs:** Regular browsers throttle timers and renderers when minimized or occluded. Tabbing out to check Discord, change music, or look at a map can desync or drop your online Free Roam and race sessions.
 - **Integrated vs. discrete GPU:** Laptops frequently default web browsers to low-power integrated graphics rather than your dedicated NVIDIA or AMD GPU.
@@ -34,7 +34,7 @@ This desktop client wraps `nfsu2mod.xyz` in a clean, high-performance Electron e
 
 ## Download & Install
 
-Grab the latest installer `Underground 2 Revived Setup.exe` from the [**Releases page**](https://github.com/DJTOMATO/nfsu2desktop/releases).
+Grab the latest installer `Underground 2 Revived Setup.exe` from the [**Releases page**](https://github.com/Vanqy9316/nfsu2mod-desktop/releases).
 
 ## What's configured under the hood
 
@@ -50,26 +50,26 @@ Grab the latest installer `Underground 2 Revived Setup.exe` from the [**Releases
 
 ## System Requirements / Specs
 
-| Component | Minimum | Recommended (60 - 120 FPS Widescreen) |
-| :--- | :--- | :--- |
-| **OS** | Windows 10 (64-bit, 1909+) | Windows 10 / 11 (64-bit) |
-| **CPU** | 4-core x86_64 processor | Modern 6+ core CPU (Ryzen 5 / Core i5 or better) |
-| **GPU** | DirectX 12 / Vulkan capable GPU with WebGPU support | Dedicated NVIDIA (GTX 1060 / RTX series) or AMD (RX 580 / RX 6000+) |
-| **RAM** | 4 GB | 8 GB+ |
-| **Storage** | ~300 MB for the client + up to 3 GB cache | SSD with 3.5 GB free space |
-| **Network** | Broadband connection (streams game assets) | Stable broadband for online Free Roam & races |
+| Component   | Minimum                                             | Recommended (60 - 120 FPS Widescreen)                               |
+| :---------- | :-------------------------------------------------- | :------------------------------------------------------------------ |
+| **OS**      | Windows 10 (64-bit, 1909+)                          | Linux (64-bit)                                                      |
+| **CPU**     | 4-core x86_64 processor                             | Modern 6+ core CPU (Ryzen 5 / Core i5 or better)                    |
+| **GPU**     | DirectX 12 / Vulkan capable GPU with WebGPU support | Dedicated NVIDIA (GTX 1060 / RTX series) or AMD (RX 580 / RX 6000+) |
+| **RAM**     | 6 GB                                                | 8 GB+                                                               |
+| **Storage** | ~300 MB for the client + up to 6 GB cache           | SSD with 6.5 GB free space                                          |
+| **Network** | Broadband connection (streams game assets)          | Stable broadband for online Free Roam & races                       |
 
 ## Shortcuts
 
-| Key | Action |
-| :--- | :--- |
-| `F11` / `Alt + Enter` | Toggle fullscreen |
-| `F5` / `Ctrl + R` | Reload page |
-| `Ctrl + Shift + I` | Toggle DevTools |
-| `F9` | Custom radio menu (select local music folder) |
-| `F12` | In-game screenshot (handled by the game) |
-| `Enter` | Play / Start (on boot screen) |
-| `Esc` / `Start` | Pause / Garage menu (in-game) |
+| Key                   | Action                                        |
+| :-------------------- | :-------------------------------------------- |
+| `F11` / `Alt + Enter` | Toggle fullscreen                             |
+| `F5` / `Ctrl + R`     | Reload page                                   |
+| `Ctrl + Shift + I`    | Toggle DevTools                               |
+| `F9`                  | Custom radio menu (select local music folder) |
+| `F12`                 | In-game screenshot (handled by the game)      |
+| `Enter`               | Play / Start (on boot screen)                 |
+| `Esc` / `Start`       | Pause / Garage menu (in-game)                 |
 
 ## Building from Source
 
@@ -105,5 +105,4 @@ npm run build:mac
 
 ## Disclaimer
 
-This is an **unofficial community desktop wrapper** for [nfsu2mod.xyz](https://nfsu2mod.xyz/). It is an independent project and is **not affiliated with, maintained, authorized, or endorsed by** the creators or operators of [nfsu2mod.xyz](https://nfsu2mod.xyz/) nor Electronic Arts. *Need for Speed* and *Need for Speed: Underground 2* are trademarks of Electronic Arts Inc. No game files, ROMs, or copyrighted assets are hosted or distributed in this repository.
-
+This is an **unofficial community desktop wrapper** for [nfsu2mod.xyz](https://nfsu2mod.xyz/). It is an independent project and is **not affiliated with, maintained, authorized, or endorsed by** the creators or operators of [nfsu2mod.xyz](https://nfsu2mod.xyz/) nor Electronic Arts. _Need for Speed_ and _Need for Speed: Underground 2_ are trademarks of Electronic Arts Inc. No game files, ROMs, or copyrighted assets are hosted or distributed in this repository.
